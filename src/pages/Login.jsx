@@ -36,22 +36,23 @@ const Login = () => {
     }
 
     return (
-        <div className="w-full h-screen max-h-[65rem] bg-blue-50 flex flex-col items-center justify-center">
-            <section className='w-[90%] mx-auto max-w-xl 2xl:max-w-2xl bg-white p-8 sm:p-10 md:p-12 xl:p-14 2xl:p-16 rounded-xl'>
-                <h2 className="text-4xl sm:text-5xl xl:text-6xl 2xl:text-7xl text-center text-blue-500 font-righteous font-bold mb-4 sm:mb-6">
-                    TaskNest
+        <div className="w-full h-screen max-h-[65rem]  flex flex-col items-center justify-center">
+            <section className='w-[90%] mx-auto max-w-xl 2xl:max-w-2xl bg-[#bc8a5f] p-8 sm:p-10 md:p-12 xl:p-14 2xl:p-16 rounded-xl'>
+                <h2 className="text-4xl sm:text-5xl xl:text-6xl 2xl:text-7xl text-center text-[#583101] hover:text-cyan-400 font-righteous font-bold mb-4 sm:mb-6">
+                    WorkOrg
                 </h2>
                 <p className="text-sm/normal sm:text-base/normal xl:text-lg/normal 2xl:text-xl/normal text-center mb-6">
-                    Your all-in-one solution for effortless task management. Stay organized, prioritize your work, and boost productivity like never before!
+                    WebOrg – your ultimate companion for seamless task management. Organize your workflow, set priorities with ease, and maximize productivity effortlessly!
                 </p>
 
-                <div className="my-6 text-left text-xs/normal xl:text-sm/normal 2xl:text-base/normal space-y-2">
-                    <p>✔ Intuitive drag-and-drop task organization.</p>
-                    <p>✔ Task prioritization with customizable order management.</p>
-                    <p>✔ Dynamic task categories: To-Do, In Progress, Done.</p>
+                <div className="my-6 text-white text-left text-xs/normal xl:text-sm/normal 2xl:text-base/normal space-y-2">
+                    <p>✔ Effortless drag-and-drop task management for seamless organization.</p>
+                    <p>✔ Prioritize tasks with flexible, customizable ordering.</p>
+                    <p>✔ Smart task categorization: To-Do, In Progress, Completed.</p>
+
                 </div>
 
-                <button onClick={handleLoginWithGoogle} className='w-full btn btn-outline hover:bg-blue-500 hover:text-white hover:border-none'><FaGoogle /> Login With Google</button>
+                <button onClick={handleLoginWithGoogle} className='w-full btn btn-outline bg-[#603808] text-white hover:bg-cyan-400 hover:text-white hover:border-none'><FaGoogle /> Login With Google</button>
             </section>
         </div>
     );

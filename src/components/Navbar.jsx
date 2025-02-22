@@ -20,13 +20,13 @@ const Navbar = ({ setIsModalOpen }) => {
             <div className="flex-1">
                 <Link
                     to="/home"
-                    className={`text-2xl text-[#3b82f6] md:text-3xl font-righteous font-bold -mb-2`}
+                    className={`text-2xl text-[#583101] hover:text-cyan-400 md:text-3xl font-righteous font-bold -mb-2`}
                 >
-                    TaskNest
+                    WorkOrg
                 </Link>
             </div>
             <div className="flex-none gap-3">
-                <button onClick={() => setIsModalOpen(true)} className='btn btn-sm bg-gradient-to-r from-blue-500 to-blue-700 text-white border-none rounded-lg'>+ New Task</button>
+                <button onClick={() => setIsModalOpen(true)} className='btn btn-sm bg-gradient-to-r from-[#5E3023] to-[#C08552] text-white border-none rounded-lg'>+ Task</button>
                 <div className="dropdown dropdown-end">
                     <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
                         <div className="w-8 rounded-full">
@@ -41,7 +41,7 @@ const Navbar = ({ setIsModalOpen }) => {
                         <div className="card-body p-2">
                             <button disabled className='btn btn-sm btn-ghost disabled:bg-transparent disabled:text-black'><FaUser />{user.displayName.split(" ")[0]}</button>
                             <div className="card-actions">
-                                <button onClick={handleLogOut} className="btn btn-sm btn-error text-white border-none btn-block">Logout</button>
+                                <button onClick={handleLogOut} className="btn btn-sm bg-[#C08552] text-white border-none btn-block">Logout</button>
                             </div>
                         </div>
                     </ul>

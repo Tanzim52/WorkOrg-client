@@ -8,16 +8,14 @@ const Footer = () => {
                 <aside>
                     <Link
                         to="/home"
-                        className={`text-2xl text-[#3b82f6] md:text-3xl font-righteous font-bold -mb-2`}
+                        className={`text-2xl text-[#583101] hover:text-cyan-400 md:text-3xl font-righteous font-bold -mb-2`}
                     >
-                        TaskNest
+                        WorkOrg
                     </Link>
                     <p className="font-bold">
-                        TaskNest
-                        <br />
-                        Organize, Prioritize, and Achieve More!
+                        Streamline, Focus, and Get Things Done!
                     </p>
-                    <p>Copyright © {new Date().getFullYear()} - All right reserved</p>
+                    <p>Copyright © {new Date().getFullYear()} - All right reserved. An MJ. Tanzim Development</p>
                 </aside>
             </div>
         </section>

@@ -73,25 +73,25 @@ const Home = () => {
 
     const loadTasks = async () => {
         try {
-            if (user.email) {  
+            if (user.email) {
                 const data = await getTasks(user.email);
-    
+
                 const organizedTasks = {
                     "To-Do": [],
                     "In Progress": [],
                     "Done": [],
                 };
-    
+
                 data.forEach((task) => {
                     if (organizedTasks[task.category]) {
                         organizedTasks[task.category].push(task);
                     }
                 });
-    
+
                 Object.keys(organizedTasks).forEach((category) => {
                     organizedTasks[category].sort((a, b) => a.order - b.order);
                 });
-    
+
                 setTasks(organizedTasks);
             }
         } catch (error) {
@@ -148,12 +148,12 @@ const Home = () => {
     return (
         <div>
 
-            <nav className="bg-white/[0.6] backdrop-blur-md sticky top-0 z-20">
+            <nav className="bg-[#F3E9DC] backdrop-blur-md sticky top-0 z-20">
                 <Navbar setIsModalOpen={setIsModalOpen}></Navbar>
             </nav>
 
             <section className="w-[90%] mx-auto min-h-screen relative pt-4 sm:pt-6 xl:pt-6 pb-10 sm:pb-16 xl:pb-20">
-                <h1 className="text-3xl font-bold text-gray-800 mb-8">Task Management</h1>
+                <h1 className="text-3xl font-bold text-[#5E3023] mb-8">Task Manager</h1>
 
                 {isModalOpen && (
                     <TaskForm
@@ -174,9 +174,9 @@ const Home = () => {
                                     <div
                                         ref={provided.innerRef}
                                         {...provided.droppableProps}
-                                        className="bg-blue-50 p-5 rounded-xl shadow-lg border border-gray-200 min-h-[300px]"
+                                        className="bg-[#F3E9DC] p-5 rounded-xl shadow-lg border border-[#C08552] min-h-[300px]"
                                     >
-                                        <h2 className="text-2xl font-semibold text-gray-700 mb-4 flex items-center">
+                                        <h2 className="text-2xl font-semibold text-[#5E3023] mb-4 flex items-center">
                                             {category === "To-Do" && <RiTodoLine />}
                                             {category === "In Progress" && <GrInProgress />}
                                             {category === "Done" && <FcTodoList />}
@@ -191,12 +191,12 @@ const Home = () => {
                                                             ref={provided.innerRef}
                                                             {...provided.draggableProps}
                                                             {...provided.dragHandleProps}
-                                                            className={`p-5 bg-white border border-gray-200 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 w-full space-y-3 ${snapshot.isDragging ? "bg-gray-100 scale-105" : ""
+                                                            className={`p-5 bg-white border border-[#C08552] rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 w-full space-y-3 ${snapshot.isDragging ? "bg-[#F3E9DC] scale-105" : ""
                                                                 }`}
                                                         >
-                                                            <h3 className="text-xl font-semibold text-gray-800">{task.title}</h3>
-                                                            <p className="text-sm text-gray-500 flex items-center gap-2"><IoCalendarNumber className="inline scale-125" />{new Date(task.timestamp).toLocaleString()}</p>
-                                                            <p className="text-sm text-gray-500"><MdDescription className="inline scale-[1.3] mr-1" /> {task.description}</p>
+                                                            <h3 className="text-xl font-semibold text-[#5E3023]">{task.title}</h3>
+                                                            <p className="text-sm text-[#5E3023] flex items-center gap-2"><IoCalendarNumber className="inline scale-125" />{new Date(task.timestamp).toLocaleString()}</p>
+                                                            <p className="text-sm text-[#5E3023]"><MdDescription className="inline scale-[1.3] mr-1" /> {task.description}</p>
                                                             <div className="w-full flex justify-between items-center">
                                                                 <div className="flex items-center gap-2">
                                                                     <button
@@ -204,7 +204,7 @@ const Home = () => {
                                                                             setEditingTask(task);
                                                                             setIsModalOpen(true);
                                                                         }}
-                                                                        className="btn btn-xs bg-gradient-to-r from-blue-500 to-blue-700 text-white border-none rounded-lg"
+                                                                        className="btn btn-xs bg-gradient-to-r from-[#5E3023] to-[#C08552] text-white border-none rounded-lg"
                                                                     >
                                                                         <FaEdit />
                                                                     </button>
@@ -212,17 +212,17 @@ const Home = () => {
                                                                         onClick={() => {
                                                                             handleDelete(task._id);
                                                                         }}
-                                                                        className="btn btn-xs btn-error text-white border-none rounded-lg"
+                                                                        className="btn btn-xs bg-[#5E3023] text-white border-none rounded-lg"
                                                                     >
                                                                         <FaTrash />
                                                                     </button>
                                                                 </div>
                                                                 <span
                                                                     className={`px-3 py-1 rounded-full text-xs font-semibold ${task.category === "Done"
-                                                                            ? "bg-green-100 text-green-700"
-                                                                            : task.category === "In Progress"
-                                                                                ? "bg-yellow-100 text-yellow-700"
-                                                                                : "bg-gray-100 text-gray-700"
+                                                                        ? "bg-green-100 text-green-700"
+                                                                        : task.category === "In Progress"
+                                                                            ? "bg-yellow-100 text-yellow-700"
+                                                                            : "bg-[#F3E9DC] text-[#5E3023]"
                                                                         }`}
                                                                 >
                                                                     {task.category}
@@ -242,7 +242,7 @@ const Home = () => {
                 </DragDropContext>
             </section>
 
-            <footer className="bg-blue-50">
+            <footer className="bg-[#F3E9DC]">
                 <Footer></Footer>
             </footer>
         </div>
